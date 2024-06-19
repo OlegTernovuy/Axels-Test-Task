@@ -1,14 +1,15 @@
 import "./App.css";
 import { Footer, Header } from "./components";
 import ProductsPage from "./pages/productsPage/ProductsPage";
+import { AppDiv } from "./styled/StyledApp";
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
+    <AppDiv>
+      <Header />
       <ProductsPage />
-      <Footer/>
-    </div>
+      <Footer />
+    </AppDiv>
   );
 }
 
