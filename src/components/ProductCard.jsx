@@ -7,11 +7,14 @@ import {
 } from "@mui/material";
 import prodImage from "../img/prodImage.webp";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = () => {
+  const navigate = useNavigate();
+
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea onClick={() => navigate("/products/1")}>
         <CardMedia
           component="img"
           height="140"

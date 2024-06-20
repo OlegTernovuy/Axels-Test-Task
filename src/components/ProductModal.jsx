@@ -1,17 +1,24 @@
-import { Button, CardMedia, Modal, Typography } from "@mui/material";
+import { CardMedia, Modal, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import React from "react";
 import { BoxModalStyle, ProdInModal } from "../styled/StyledModal";
 import CommentsList from "./CommentsList";
 import CommentForm from "./CommentForm";
 import prodImage from "../img/prodImage.webp";
+import { useNavigate } from "react-router-dom";
 
 const ProductModal = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
+
+  const navigate = useNavigate();
+
+  const closeModal = () => {
+    setOpen(false);
+    navigate("/");
+  };
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Open Child Modal</Button>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal open={open} onClose={closeModal}>
         <BoxModalStyle>
           <ProdInModal>
             <CardMedia

@@ -1,13 +1,14 @@
 import "./App.css";
 import { Footer, Header } from "./components";
-import ProductsPage from "./pages/productsPage/ProductsPage";
 import { AppDiv } from "./styled/StyledApp";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./routes/routes";
 
 function App() {
   return (
     <AppDiv>
       <Header />
-      <ProductsPage />
+      <RouterProvider router={routes} />
       <Footer />
     </AppDiv>
   );
