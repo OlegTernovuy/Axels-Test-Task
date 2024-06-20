@@ -28,7 +28,13 @@ const ProdInModal = styled.div`
 
 const CommentBlockModal = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const CommentDiv = styled.div`
+  display: flex;
   align-items: center;
 `;
 
-export { BoxModalStyle, ProdInModal, CommentBlockModal };
+export { BoxModalStyle, ProdInModal, CommentBlockModal, CommentDiv };
