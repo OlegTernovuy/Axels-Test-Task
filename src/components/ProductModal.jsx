@@ -1,10 +1,11 @@
-import { Button, CardMedia, Modal, Typography } from "@mui/material";
-import Divider from "@mui/material/Divider";
-import React from "react";
-import { BoxModalStyle, ProdInModal } from "../styled/StyledModal";
-import CommentsList from "./CommentsList";
-import CommentForm from "./CommentForm";
-import prodImage from "../img/prodImage.webp";
+import React from 'react';
+import { Button, CardMedia, Modal, Typography } from '@mui/material';
+import Divider from '@mui/material/Divider';
+
+import { CommentsList, CommentForm } from './index';
+import { BoxModalStyle, ProdInModal } from '../styled/StyledModal';
+
+import prodImage from '../img/prodImage.webp';
 
 const ProductModal = () => {
   const [open, setOpen] = React.useState(false);

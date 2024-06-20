@@ -1,5 +1,9 @@
-import { Box } from "@mui/material";
-import styled from "styled-components";
+import styled from 'styled-components';
+
+import { Box } from '@mui/material';
+
+import { baseTheme } from './GlobalStyle';
+
 
 const BoxModalStyle = styled(Box)`
   position: absolute;
@@ -9,7 +13,7 @@ const BoxModalStyle = styled(Box)`
   width: 25rem;
   max-height: 37.5rem;
   border-radius: 0.25rem;
-  background-color: #e9f2eb;
+  background-color: ${baseTheme.colors.background};
   padding: 1rem;
   overflow-y: auto;
 `;

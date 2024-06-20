@@ -1,7 +1,7 @@
-import "./App.css";
-import { Footer, Header } from "./components";
-import ProductsPage from "./pages/productsPage/ProductsPage";
-import { AppDiv } from "./styled/StyledApp";
+import { Footer, Header } from './components';
+import ProductsPage from './pages/productsPage/ProductsPage';
+
+import { AppDiv } from './styled/StyledApp';
 
 function App() {
   return (

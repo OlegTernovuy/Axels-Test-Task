@@ -1,6 +1,7 @@
-import { Button, Rating, TextField } from "@mui/material";
-import React from "react";
-import { BoxForm } from "../styled/StyledCommentForm";
+import React from 'react';
+import { Button, Rating, TextField } from '@mui/material';
+
+import { BoxForm } from '../styled/StyledCommentForm';
 
 const CommentForm = () => {
   const [ratingValue, setRatingValue] = React.useState(0);

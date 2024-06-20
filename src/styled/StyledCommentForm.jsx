@@ -1,5 +1,6 @@
-import { Box } from "@mui/material";
-import styled from "styled-components";
+import styled from 'styled-components';
+
+import { Box } from '@mui/material';
 
 const BoxForm = styled(Box)`
   display: flex;
