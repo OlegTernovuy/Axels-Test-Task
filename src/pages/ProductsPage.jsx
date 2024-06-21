@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material';
 
-import { GridStyle, StyledDiv } from '../../styled/StyledProductsPage';
-import { ProductCard, ProductModal } from '../../components';
+import { GridStyle, StyledDiv } from '../styled/StyledProductsPage';
+import { ProductCard, ProductModal } from '../components';
 
 const ProductsPage = () => (
   <StyledDiv>

@@ -1,4 +1,4 @@
-import ProductsPage from './pages/productsPage/ProductsPage';
+import ProductsPage from './pages/ProductsPage';
 import { Footer, Header } from './components';
 import { AppDiv } from './styled/StyledApp';
 
