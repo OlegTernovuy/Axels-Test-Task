@@ -1,7 +1,6 @@
-import React from 'react';
 import { Rating, Typography } from '@mui/material';
 
-import { CommentBlockModal, CommentDiv } from '../styled/StyledModal';
+import { CommentBlockModal, CommentDiv } from '../styled/modal/StyledModal';
 
 const CommentsList = () => (
   <CommentBlockModal>

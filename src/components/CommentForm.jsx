@@ -1,10 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button, Rating, TextField } from '@mui/material';
 
 import { BoxForm } from '../styled/StyledCommentForm';
 
 const CommentForm = () => {
-  const [ratingValue, setRatingValue] = React.useState(0);
+  const [ratingValue, setRatingValue] = useState(0);
 
   return (
     <BoxForm component="form">
@@ -12,7 +12,7 @@ const CommentForm = () => {
       <Rating
         name="simple-controlled"
         value={ratingValue}
-        onChange={(newValue) => {
+        onChange={(event, newValue) => {
           setRatingValue(newValue);
         }}
       />

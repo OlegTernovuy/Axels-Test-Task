@@ -1,6 +1,5 @@
-import { Footer, Header } from './components';
 import ProductsPage from './pages/productsPage/ProductsPage';
-
+import { Footer, Header } from './components';
 import { AppDiv } from './styled/StyledApp';
 
 function App() {

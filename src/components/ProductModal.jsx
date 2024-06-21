@@ -1,19 +1,23 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button, CardMedia, Modal, Typography } from '@mui/material';
 import Divider from '@mui/material/Divider';
 
 import { CommentsList, CommentForm } from './index';
-import { BoxModalStyle, ProdInModal } from '../styled/StyledModal';
+import { BoxModalStyle, ProdInModal } from '../styled/modal/StyledModal';
 
 import prodImage from '../img/prodImage.webp';
+import { ModalCloseButton } from '../styled/modal/StyledCloseModalButton';
 
 const ProductModal = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const handleCloseModal = () => setOpen(false)
+
   return (
     <>
       <Button onClick={() => setOpen(true)}>Open Child Modal</Button>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal open={open} onClose={handleCloseModal}>
         <BoxModalStyle>
+          <ModalCloseButton onClick={handleCloseModal} />
           <ProdInModal>
             <CardMedia
               component="img"
