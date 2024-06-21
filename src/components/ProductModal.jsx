@@ -4,9 +4,9 @@ import Divider from '@mui/material/Divider';
 
 import { CommentsList, CommentForm } from './index';
 import { BoxModalStyle, ProdInModal } from '../styled/modal/StyledModal';
+import { ModalCloseButton } from '../styled/modal/StyledCloseModalButton';
 
 import prodImage from '../img/prodImage.webp';
-import { ModalCloseButton } from '../styled/modal/StyledCloseModalButton';
 
 const ProductModal = () => {
   const [open, setOpen] = useState(false);
@@ -20,15 +20,15 @@ const ProductModal = () => {
           <ModalCloseButton onClick={handleCloseModal} />
           <ProdInModal>
             <CardMedia
-              component="img"
-              height="220"
+              component='img'
+              height='220'
               image={prodImage}
-              alt="product"
+              alt='product'
             />
-            <Typography variant="h5" component="h2">
+            <Typography variant='h5' component='h2'>
               Title
             </Typography>
-            <Typography variant="body2">Desc</Typography>
+            <Typography variant='body2'>Desc</Typography>
           </ProdInModal>
           <Divider />
           <CommentForm />

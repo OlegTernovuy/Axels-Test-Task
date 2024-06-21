@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { baseTheme } from '../GlobalStyle';
 
 const ModalCloseButton = styled.div`
@@ -12,7 +13,7 @@ const ModalCloseButton = styled.div`
   &:after {
     position: absolute;
     left: 8px;
-    content: " ";
+    content: ' ';
     height: 16px;
     width: 1px;
     background-color: ${baseTheme.colors.primary};

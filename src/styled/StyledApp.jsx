@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import { baseTheme } from './GlobalStyle';
 
 const AppDiv = styled.div`

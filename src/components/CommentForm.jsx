@@ -7,16 +7,16 @@ const CommentForm = () => {
   const [ratingValue, setRatingValue] = useState(0);
 
   return (
-    <BoxForm component="form">
-      <TextField label="comment" variant="outlined" />
+    <BoxForm component='form'>
+      <TextField label='comment' variant='outlined' />
       <Rating
-        name="simple-controlled"
+        name='simple-controlled'
         value={ratingValue}
         onChange={(event, newValue) => {
           setRatingValue(newValue);
         }}
       />
-      <Button variant="outlined" type="submit">
+      <Button variant='outlined' type='submit'>
         Submit
       </Button>
     </BoxForm>

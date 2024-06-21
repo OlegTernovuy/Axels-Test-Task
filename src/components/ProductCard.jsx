@@ -13,16 +13,16 @@ const ProductCard = () => (
   <StyledCard>
     <CardActionArea>
       <CardMedia
-        component="img"
-        height="140"
+        component='img'
+        height='140'
         image={prodImage}
-        alt="product title"
+        alt='product title'
       />
       <CardContent>
-        <Typography variant="h5" component="h2">
+        <Typography variant='h5' component='h2'>
           Lorem
         </Typography>
-        <Typography variant="body2">
+        <Typography variant='body2'>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod,
           repellat.
         </Typography>
