@@ -9,8 +9,10 @@ import prodImage from "../img/prodImage.webp";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProductCard = () => {
+const ProductCard = (props) => {
   const navigate = useNavigate();
+
+  const { title, desc } = props;
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -23,11 +25,10 @@ const ProductCard = () => {
         />
         <CardContent>
           <Typography variant="h5" component="h2">
-            Lorem
+            {title}
           </Typography>
           <Typography variant="body2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod,
-            repellat.
+            {desc}
           </Typography>
         </CardContent>
       </CardActionArea>
