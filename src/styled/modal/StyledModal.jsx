@@ -10,7 +10,6 @@ const BoxModalStyle = styled(Box)`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 25rem;
-  max-height: 37.5rem;
   border-radius: 0.25rem;
   background-color: ${baseTheme.colors.background};
   overflow-y: auto;
@@ -27,6 +26,7 @@ const ProdInModal = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+  min-height: 280px;
   h3 {
     margin: 0.25rem;
   }

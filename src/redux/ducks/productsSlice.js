@@ -1,10 +1,13 @@
 import { createSlice, createAction } from '@reduxjs/toolkit';
-import { put, takeEvery } from '@redux-saga/core/effects';
+import { put, call, takeEvery } from '@redux-saga/core/effects';
+
+import { getRequest } from '../../api';
 
 const usersInitialState = {
   products: [],
   product: {},
-  loading: false,
+  prodLoading: false,
+  singleProdLoading: false,
   errors: '',
 };
 
@@ -14,21 +17,23 @@ export const productsSlice = createSlice({
   reducers: {
     getProductsAction: (state, action) => {
       state.errors = '';
-      state.loading = true;
+      state.prodLoading = true;
     },
     getSingleProductAction: (state, action) => {
       state.errors = '';
+      state.singleProdLoading = true;
     },
     getProductSuccessAction: (state, action) => {
       state.products = action.payload;
-      state.loading = false;
+      state.prodLoading = false;
     },
     getSingleProductSuccessAction: (state, action) => {
       state.product = action.payload;
-      state.loading = false;
+      state.singleProdLoading = false;
     },
     getProductErrorAction: (state, action) => {
-      state.loading = false;
+      state.prodLoading = false;
+      state.singleProdLoading = false;
       state.errors = action.payload;
     },
   },
@@ -41,9 +46,8 @@ export const fetchSingleProduct = createAction('Products/getSingleProductAction'
 // Worker
 function* getProductsSaga() {
   try {
-    const response = yield fetch(`http://demo2663713.mockable.io/prod`);
-    const json = yield response.json();
-    yield put(getProductSuccessAction(json.data));
+    const products = yield call(() => getRequest('/prod'));
+    yield put(getProductSuccessAction(products.data));
   } catch (error) {
     yield put(getProductErrorAction(error.message))
   }
@@ -51,9 +55,8 @@ function* getProductsSaga() {
 
 function* getSingleProductSaga(id) {
   try {
-    const response = yield fetch(`http://demo2663713.mockable.io/prod/${1}`);
-    const json = yield response.json();
-    yield put(getSingleProductSuccessAction(json.data[0]));
+    const product = yield call(() => getRequest(`/prod/${1}`));
+    yield put(getSingleProductSuccessAction(product.data[0]));
   } catch (error) {
     yield put(getProductErrorAction(error.message))
   }

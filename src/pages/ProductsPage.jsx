@@ -11,7 +11,7 @@ import { fetchProducts } from '../redux/ducks/productsSlice';
 
 const ProductsPage = () => {
   const productsList = useSelector(Selectors.products);
-  const loading = useSelector(Selectors.loading);
+  const loading = useSelector(Selectors.prodLoading);
   const errors = useSelector(Selectors.errors);
   const dispatch = useDispatch();
 
