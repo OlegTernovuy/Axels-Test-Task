@@ -11,7 +11,7 @@ const CommentsList = (props) => {
         comments.map((comment) => (
           <CommentDiv key={comment.commentId}>
             <Typography variant='body2'>{comment.commentText}</Typography>
-            <Rating name='read-only' value={comment.ratting} readOnly />
+            <Rating name='read-only' value={comment.rating} readOnly />
           </CommentDiv>
         ))}
     </CommentBlockModal>
