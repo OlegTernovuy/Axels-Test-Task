@@ -44,6 +44,7 @@ const CommentBlockModal = styled.div`
 
 const CommentDiv = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 

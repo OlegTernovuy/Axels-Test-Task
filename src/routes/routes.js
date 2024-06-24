@@ -1,17 +1,18 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom';
 
-import NotFound from "../pages/notFoundPage/NotFound";
-import ProductsPage from "../pages/productsPage/ProductsPage";
-import ProductModal from "../components/ProductModal";
+import ProductsPage from '../pages/ProductsPage';
+import NotFound from '../pages/NotFound';
+import { ProductModal } from '../components/index';
+
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <ProductsPage />,
     errorElement: <NotFound />,
     children: [
       {
-        path: "products/:prodId",
+        path: 'products/:prodId',
         element: <ProductModal />,
       },
     ],

@@ -9,20 +9,18 @@ import {
 
 import { StyledCard } from '../styled/StyledProductCard';
 
-import prodImage from '../img/prodImage.webp';
-
 const ProductCard = (props) => {
   const navigate = useNavigate();
 
-  const { title, desc } = props;
+  const { title, desc, prodId, img } = props;
 
   return (
     <StyledCard>
-      <CardActionArea onClick={() => navigate('/products/1')}>
+      <CardActionArea onClick={() => navigate(`/products/${prodId}`)}>
         <CardMedia
           component='img'
           height='140'
-          image={prodImage}
+          image={img}
           alt='product title'
         />
         <CardContent>
