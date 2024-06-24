@@ -1,21 +1,22 @@
-import { Button, Rating, TextField } from "@mui/material";
-import React from "react";
-import { BoxForm } from "../styled/StyledCommentForm";
+import { useState } from 'react';
+import { Button, Rating, TextField } from '@mui/material';
+
+import { BoxForm } from '../styled/StyledCommentForm';
 
 const CommentForm = () => {
-  const [ratingValue, setRatingValue] = React.useState(0);
+  const [ratingValue, setRatingValue] = useState(0);
 
   return (
-    <BoxForm component="form">
-      <TextField label="comment" variant="outlined" />
+    <BoxForm component='form'>
+      <TextField label='comment' variant='outlined' />
       <Rating
-        name="simple-controlled"
+        name='simple-controlled'
         value={ratingValue}
-        onChange={(newValue) => {
+        onChange={(event, newValue) => {
           setRatingValue(newValue);
         }}
       />
-      <Button variant="outlined" type="submit">
+      <Button variant='outlined' type='submit'>
         Submit
       </Button>
     </BoxForm>

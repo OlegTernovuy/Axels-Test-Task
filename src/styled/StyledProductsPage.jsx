@@ -1,5 +1,5 @@
-import { Grid } from "@mui/material";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Grid } from '@mui/material';
 
 const StyledDiv = styled.div`
   min-height: 100vh;
