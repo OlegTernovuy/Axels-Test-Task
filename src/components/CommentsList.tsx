@@ -1,9 +1,13 @@
 import { Rating, Typography } from '@mui/material';
 
 import { CommentBlockModal, CommentDiv } from '../styled/modal/StyledModal';
+import { IComment } from '../types';
 
-const CommentsList = (props) => {
-  const { comments } = props;
+interface propsComments {
+  comments: IComment[];
+}
+
+const CommentsList = ({ comments }: propsComments) => {
   
   return (
     <CommentBlockModal>

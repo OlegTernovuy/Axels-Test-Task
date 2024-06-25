@@ -4,9 +4,14 @@ import { Button, Rating, TextField } from '@mui/material';
 
 import { BoxForm } from '../styled/StyledCommentForm';
 
+interface FormValues {
+  comment: string;
+  rating: number;
+}
+
 const validationSchema = yup.object({
   comment: yup
-    .string('Enter your comment')
+    .string()
     .min(5, 'Сomment must contain at least 5 char')
     .max(25, 'Сomment should not contain more than 25 char')
     .required('Comment is required'),
@@ -18,16 +23,16 @@ const CommentForm = () => {
     initialValues: {
       comment: '',
       rating: 0,
-    },
+    } as FormValues,
     validationSchema: validationSchema,
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: (values: FormValues, { resetForm }) => {
       resetForm();
       console.log(values);
     },
   });
 
   return (
-    <BoxForm component='form' onSubmit={formik.handleSubmit}>
+    <BoxForm onSubmit={formik.handleSubmit}>
       <TextField
         label='comment'
         name='comment'
