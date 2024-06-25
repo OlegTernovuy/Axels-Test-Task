@@ -34,11 +34,11 @@ const ProductModal = () => {
     <Modal open={open} onClose={closeModal}>
       <BoxModalStyle>
         <ModalCloseButton onClick={closeModal} />
-        <ProdInModal>
-          {loading ? (
-            <>Loading...</>
-          ) : (
-            <>
+        {loading ? (
+          <>Loading...</>
+        ) : (
+          <>
+            <ProdInModal>
               <CardMedia
                 component='img'
                 height='220'
@@ -49,13 +49,13 @@ const ProductModal = () => {
                 {singleProduct.title}
               </Typography>
               <Typography variant='body2'>{singleProduct.desc}</Typography>
-            </>
-          )}
-        </ProdInModal>
-        <Divider />
-        <CommentForm />
-        <Divider />
-        <CommentsList comments={singleProduct.comments} />
+            </ProdInModal>
+            <Divider />
+            <CommentForm />
+            <Divider />
+            <CommentsList comments={singleProduct.comments} />
+          </>
+        )}
       </BoxModalStyle>
     </Modal>
   );

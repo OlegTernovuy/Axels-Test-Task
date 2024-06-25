@@ -10,6 +10,7 @@ const BoxModalStyle = styled(Box)`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 25rem;
+  height: 37.5rem;
   border-radius: 0.25rem;
   background-color: ${baseTheme.colors.background};
   overflow-y: auto;
