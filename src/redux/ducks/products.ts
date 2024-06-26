@@ -41,17 +41,17 @@ export const products = createSlice({
   },
 });
 
-export const fetchProducts = createAction<undefined>('Products/getProductsAction');
+export const fetchProducts = createAction('Products/getProductsAction');
 
-export const fetchSingleProduct = createAction<undefined>('Products/getSingleProductAction');
+export const fetchSingleProduct = createAction('Products/getSingleProductAction');
 
 // Worker
 function* getProductsSaga(): SagaIterator {
   try {
-    const products: IProducts = yield call(() => getRequest<IProducts[]>('/prod'));    
+    const products: IProducts = yield call(() => getRequest<IProducts>('/prod'));    
     yield put(getProductSuccessAction(products));
-  } catch (error) {
-    yield put(getProductErrorAction(error.message))
+  } catch (error) {    
+    yield put(getProductErrorAction(error.toString()));
   }
 }
 
@@ -60,7 +60,7 @@ function* getSingleProductSaga(id): SagaIterator {
     const product: ISingleProduct = yield call(() => getRequest<ISingleProduct>(`/prod/${1}`));
     yield put(getSingleProductSuccessAction(product));
   } catch (error) {
-    yield put(getProductErrorAction(error.message))
+    yield put(getProductErrorAction(error.toString()))
   }
 }
 

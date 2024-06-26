@@ -13,7 +13,7 @@ const ProductsPage = () => {
   const productsList = useAppSelector(Selectors.products);  
   const loading = useAppSelector(Selectors.prodLoading);
   const errors = useAppSelector(Selectors.errors);
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();  
 
   useEffect(() => {
     dispatch(fetchProducts());

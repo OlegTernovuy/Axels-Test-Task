@@ -11,7 +11,6 @@ import { StyledCardMedia } from '../styled/StyledProductCard';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { fetchSingleProduct } from '../redux/ducks/products';
 import Selectors from '../redux/ducks/selectors';
-import { ISingleProduct } from '../types';
 
 const ProductModal = () => {
   const dispatch = useAppDispatch()
@@ -19,7 +18,7 @@ const ProductModal = () => {
   const { prodId } = useParams();
 
   const [open, setOpen] = useState(true);
-  const singleProduct = useAppSelector<ISingleProduct>(Selectors.product);
+  const singleProduct = useAppSelector(Selectors.product);
   const loading = useAppSelector(Selectors.singleProdLoading);
 
   useEffect(() => {

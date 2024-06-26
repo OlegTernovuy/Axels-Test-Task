@@ -2,11 +2,11 @@ import createSagaMiddleware from '@redux-saga/core';
 import { combineReducers, configureStore, Tuple } from '@reduxjs/toolkit';
 import { all } from '@redux-saga/core/effects';
 
-import productsSlice, { watchGetProducts, watchGetSingleProduct } from './ducks/products';
+import products, { watchGetProducts, watchGetSingleProduct } from './ducks/products';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const rootReducer = combineReducers({ productsStore: productsSlice });
+const rootReducer = combineReducers({ productsStore: products });
 
 const rootSaga = function* () {
   yield all([watchGetProducts(), watchGetSingleProduct()]);
