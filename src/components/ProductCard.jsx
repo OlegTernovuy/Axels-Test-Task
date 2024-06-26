@@ -1,34 +1,35 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   CardActionArea,
   CardContent,
-  CardMedia,
   Typography,
 } from '@mui/material';
 
-import { StyledCard } from '../styled/StyledProductCard';
+import { StyledCard, StyledCardMedia } from '../styled/StyledProductCard';
 
-import prodImage from '../img/prodImage.webp';
+const ProductCard = (props) => {
+  const navigate = useNavigate();
 
-const ProductCard = () => (
-  <StyledCard>
-    <CardActionArea>
-      <CardMedia
-        component='img'
-        height='140'
-        image={prodImage}
-        alt='product title'
-      />
-      <CardContent>
-        <Typography variant='h5' component='h2'>
-          Lorem
-        </Typography>
-        <Typography variant='body2'>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod,
-          repellat.
-        </Typography>
-      </CardContent>
-    </CardActionArea>
-  </StyledCard>
-);
+  const { title, desc, prodId, img } = props;
+
+  return (
+    <StyledCard>
+      <CardActionArea onClick={() => navigate(`/products/${prodId}`)}>
+        <StyledCardMedia
+          height='140'
+          src={img}
+          alt='product title'
+        />
+        <CardContent>
+          <Typography variant='h5' component='h2'>
+            {title}
+          </Typography>
+          <Typography variant='body2'>{desc}</Typography>
+        </CardContent>
+      </CardActionArea>
+    </StyledCard>
+  );
+};
 
 export default ProductCard;
