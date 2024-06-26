@@ -19,7 +19,10 @@ const BoxModalStyle = styled(Box)`
         min-width: auto;
         width: 100%;
         min-height: 100vh;
-    }
+    };
+    &::-webkit-scrollbar { 
+    display: none;
+  };
 `;
 
 const ProdInModal = styled.div`
