@@ -8,8 +8,8 @@ import { CommentsList, CommentForm } from './index';
 import { BoxModalStyle, ProdInModal } from '../styled/modal/StyledModal';
 import { ModalCloseButton } from '../styled/modal/StyledCloseModalButton';
 
-import { fetchSingleProduct } from '../redux/ducks/productsSlice';
-import Selectors from '../redux/selectors';
+import { fetchSingleProduct } from '../redux/ducks/products';
+import Selectors from '../redux/ducks/selectors';
 
 const ProductModal = () => {
   const dispatch = useDispatch()

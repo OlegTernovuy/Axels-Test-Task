@@ -12,7 +12,7 @@ const usersInitialState = {
 };
 
 export const productsSlice = createSlice({
-  name: 'Products',
+  name: 'products',
   initialState: usersInitialState,
   reducers: {
     getProductsAction: (state, action) => {
@@ -39,15 +39,15 @@ export const productsSlice = createSlice({
   },
 });
 
-export const fetchProducts = createAction('Products/getProductsAction');
+export const fetchProducts = createAction('products/getProductsAction');
 
-export const fetchSingleProduct = createAction('Products/getSingleProductAction');
+export const fetchSingleProduct = createAction('products/getSingleProductAction');
 
 // Worker
 function* getProductsSaga() {
   try {
     const products = yield call(() => getRequest('/prod'));
-    yield put(getProductSuccessAction(products.data));
+    yield put(getProductSuccessAction(products));
   } catch (error) {
     yield put(getProductErrorAction(error.message))
   }
@@ -56,7 +56,7 @@ function* getProductsSaga() {
 function* getSingleProductSaga(id) {
   try {
     const product = yield call(() => getRequest(`/prod/${1}`));
-    yield put(getSingleProductSuccessAction(product.data[0]));
+    yield put(getSingleProductSuccessAction(product));
   } catch (error) {
     yield put(getProductErrorAction(error.message))
   }

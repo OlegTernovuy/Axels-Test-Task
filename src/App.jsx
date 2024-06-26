@@ -1,9 +1,23 @@
-import { RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { Footer, Header } from './components';
+import ProductsPage from './pages/ProductsPage';
+import NotFound from './pages/NotFound';
+import { Footer, Header, ProductModal } from './components';
 import { AppDiv } from './styled/StyledApp';
 
-import { routes } from './routes/routes';
+const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <ProductsPage />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        path: 'products/:prodId',
+        element: <ProductModal />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
