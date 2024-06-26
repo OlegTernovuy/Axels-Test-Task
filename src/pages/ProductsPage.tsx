@@ -5,9 +5,9 @@ import { Box, Grid } from '@mui/material';
 import { GridStyle, StyledDiv } from '../styled/StyledProductsPage';
 import { ProductCard } from '../components/index';
 
-import Selectors from '../redux/selectors';
-import { fetchProducts } from '../redux/ducks/productsSlice';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
+import { fetchProducts } from '../redux/ducks/products';
+import Selectors from '../redux/ducks/selectors';
 
 const ProductsPage = () => {
   const productsList = useAppSelector(Selectors.products);  

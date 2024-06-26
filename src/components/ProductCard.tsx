@@ -2,11 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import {
   CardActionArea,
   CardContent,
-  CardMedia,
   Typography,
 } from '@mui/material';
 
-import { StyledCard } from '../styled/StyledProductCard';
+import { StyledCard, StyledCardMedia } from '../styled/StyledProductCard';
+
 import { IProduct } from '../types';
 
 const ProductCard = (props: IProduct) => {
@@ -17,10 +17,9 @@ const ProductCard = (props: IProduct) => {
   return (
     <StyledCard>
       <CardActionArea onClick={() => navigate(`/products/${id}`)}>
-        <CardMedia
-          component='img'
+        <StyledCardMedia
           height='140'
-          image={img}
+          src={img}
           alt='product title'
         />
         <CardContent>

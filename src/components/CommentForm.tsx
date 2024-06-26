@@ -27,7 +27,7 @@ const CommentForm = () => {
     validationSchema: validationSchema,
     onSubmit: (values: FormValues, { resetForm }) => {
       resetForm();
-      console.log(values);
+      alert(JSON.stringify(values));
     },
   });
 

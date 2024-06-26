@@ -19,7 +19,10 @@ const BoxModalStyle = styled(Box)`
         min-width: auto;
         width: 100%;
         min-height: 100vh;
-    }
+    };
+    &::-webkit-scrollbar { 
+    display: none;
+  };
 `;
 
 const ProdInModal = styled.div`
@@ -36,6 +39,13 @@ const ProdInModal = styled.div`
   }
 `;
 
+const LoadingSpan = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`;
+
 const CommentBlockModal = styled.div`
   display: flex;
   flex-direction: column;
@@ -49,4 +59,4 @@ const CommentDiv = styled.div`
   align-items: center;
 `;
 
-export { BoxModalStyle, ProdInModal, CommentBlockModal, CommentDiv };
+export { BoxModalStyle, ProdInModal, LoadingSpan, CommentBlockModal, CommentDiv };
