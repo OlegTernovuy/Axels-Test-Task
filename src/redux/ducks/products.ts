@@ -41,9 +41,9 @@ export const products = createSlice({
   },
 });
 
-export const fetchProducts = createAction('Products/getProductsAction');
+export const fetchProducts = createAction('products/getProductsAction');
 
-export const fetchSingleProduct = createAction('Products/getSingleProductAction');
+export const fetchSingleProduct = createAction('products/getSingleProductAction');
 
 // Worker
 function* getProductsSaga(): SagaIterator {
