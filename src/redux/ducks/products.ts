@@ -13,8 +13,8 @@ const usersInitialState: IProductsState = {
   errors: '',
 };
 
-export const productsSlice = createSlice({
-  name: 'Products',
+export const products = createSlice({
+  name: 'products',
   initialState: usersInitialState,
   reducers: {
     getProductsAction: (state) => {
@@ -79,5 +79,5 @@ export const {
   getProductSuccessAction,
   getSingleProductSuccessAction,
   getProductErrorAction,
-} = productsSlice.actions;
-export default productsSlice.reducer;
+} = products.actions;
+export default products.reducer;
