@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { CardMedia, Modal, Typography } from '@mui/material';
+import { Modal, Typography } from '@mui/material';
 import Divider from '@mui/material/Divider';
 
 import { CommentsList, CommentForm } from './index';
-import { BoxModalStyle, ProdInModal } from '../styled/modal/StyledModal';
+import { BoxModalStyle, LoadingSpan, ProdInModal } from '../styled/modal/StyledModal';
 import { ModalCloseButton } from '../styled/modal/StyledCloseModalButton';
+import { StyledCardMedia } from '../styled/StyledProductCard';
 
 import { fetchSingleProduct } from '../redux/ducks/products';
 import Selectors from '../redux/ducks/selectors';
@@ -35,14 +36,13 @@ const ProductModal = () => {
       <BoxModalStyle>
         <ModalCloseButton onClick={closeModal} />
         {loading ? (
-          <>Loading...</>
+          <LoadingSpan>Loading...</LoadingSpan>
         ) : (
           <>
             <ProdInModal>
-              <CardMedia
-                component='img'
+              <StyledCardMedia
                 height='220'
-                image={singleProduct.img}
+                src={singleProduct.img}
                 alt='product'
               />
               <Typography variant='h5' component='h2'>
