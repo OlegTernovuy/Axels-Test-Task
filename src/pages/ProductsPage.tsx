@@ -1,19 +1,19 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router';
 import { Box, Grid } from '@mui/material';
 
 import { GridStyle, StyledDiv } from '../styled/StyledProductsPage';
 import { ProductCard } from '../components/index';
 
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { fetchProducts } from '../redux/ducks/products';
 import Selectors from '../redux/ducks/selectors';
 
 const ProductsPage = () => {
-  const productsList = useSelector(Selectors.products);
-  const loading = useSelector(Selectors.prodLoading);
-  const errors = useSelector(Selectors.errors);
-  const dispatch = useDispatch();
+  const productsList = useAppSelector(Selectors.products);  
+  const loading = useAppSelector(Selectors.prodLoading);
+  const errors = useAppSelector(Selectors.errors);
+  const dispatch = useAppDispatch();  
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -35,7 +35,7 @@ const ProductsPage = () => {
                     title={product.title}
                     img={product.img}
                     desc={product.desc}
-                    prodId={product.id}
+                    id={product.id}
                   />
                 </GridStyle>
               ))}

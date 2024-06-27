@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { Modal, Typography } from '@mui/material';
 import Divider from '@mui/material/Divider';
 
@@ -9,17 +8,18 @@ import { BoxModalStyle, LoadingSpan, ProdInModal } from '../styled/modal/StyledM
 import { ModalCloseButton } from '../styled/modal/StyledCloseModalButton';
 import { StyledCardMedia } from '../styled/StyledProductCard';
 
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { fetchSingleProduct } from '../redux/ducks/products';
 import Selectors from '../redux/ducks/selectors';
 
 const ProductModal = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const navigate = useNavigate();
   const { prodId } = useParams();
 
   const [open, setOpen] = useState(true);
-  const singleProduct = useSelector(Selectors.product);
-  const loading = useSelector(Selectors.singleProdLoading);
+  const singleProduct = useAppSelector(Selectors.product);
+  const loading = useAppSelector(Selectors.singleProdLoading);
 
   useEffect(() => {
     if (!prodId) return undefined;

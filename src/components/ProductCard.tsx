@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   CardActionArea,
@@ -8,14 +7,16 @@ import {
 
 import { StyledCard, StyledCardMedia } from '../styled/StyledProductCard';
 
-const ProductCard = (props) => {
+import { IProduct } from '../types';
+
+const ProductCard = (props: IProduct) => {
   const navigate = useNavigate();
 
-  const { title, desc, prodId, img } = props;
+  const { title, desc, id, img } = props;
 
   return (
     <StyledCard>
-      <CardActionArea onClick={() => navigate(`/products/${prodId}`)}>
+      <CardActionArea onClick={() => navigate(`/products/${id}`)}>
         <StyledCardMedia
           height='140'
           src={img}
