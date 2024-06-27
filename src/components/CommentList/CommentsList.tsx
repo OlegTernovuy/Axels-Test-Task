@@ -1,9 +1,9 @@
 import { Rating, Typography } from '@mui/material';
 
-import { CommentBlockModal, CommentDiv } from '../styled/modal/StyledModal';
-import { IComment } from '../types';
+import { CommentBlockModal, CommentDiv } from '../../styled/modal/StyledModal';
+import { IComment } from '../../types';
 
-interface propsComments {
+export interface propsComments {
   comments: IComment[];
 }
 

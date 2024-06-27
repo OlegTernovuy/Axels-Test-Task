@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router';
 import { Box, Grid } from '@mui/material';
 
-import { GridStyle, StyledDiv } from '../styled/StyledProductsPage';
-import { ProductCard } from '../components/index';
+import { GridStyle, StyledDiv } from '../../styled/StyledProductsPage';
+import { ProductCard } from '../../components/index';
 
-import { useAppDispatch, useAppSelector } from '../hooks/redux';
-import { fetchProducts } from '../redux/ducks/products';
-import Selectors from '../redux/ducks/selectors';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { fetchProducts } from '../../redux/ducks/products';
+import Selectors from '../../redux/ducks/selectors';
 
 const ProductsPage = () => {
   const productsList = useAppSelector(Selectors.products);  
@@ -32,10 +32,7 @@ const ProductsPage = () => {
               productsList.map((product) => (
                 <GridStyle item xs={2} sm={3} md={3} key={product.id}>
                   <ProductCard
-                    title={product.title}
-                    img={product.img}
-                    desc={product.desc}
-                    id={product.id}
+                    product={product}
                   />
                 </GridStyle>
               ))}

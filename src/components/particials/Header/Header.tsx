@@ -1,4 +1,4 @@
-import { StyledHeader } from '../../styled/particials/StyledHeader';
+import { StyledHeader } from '../../../styled/particials/StyledHeader';
 
 const Header = () => (
   <StyledHeader>

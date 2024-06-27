@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer snapshot component Matches Snapshot 1`] = `
+<footer
+  className="sc-aYaIB fUUDmR"
+>
+  <span>
+    Oleh Ternovyi 2024
+  </span>
+</footer>
+`;

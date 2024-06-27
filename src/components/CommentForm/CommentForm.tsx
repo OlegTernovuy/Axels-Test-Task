@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Button, Rating, TextField } from '@mui/material';
 
-import { BoxForm } from '../styled/StyledCommentForm';
+import { BoxForm } from '../../styled/StyledCommentForm';
 
 interface FormValues {
   comment: string;
