@@ -290,3 +290,294 @@ exports[`Comment form snapshot component Matches Snapshot 1`] = `
   </button>
 </form>
 `;
+
+exports[`CommentForm component CommentForm matches Snapshot 1`] = `
+<form
+  className="sc-aYaIB jNoMlc"
+  onSubmit={[Function]}
+>
+  <div
+    className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+  >
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+      data-shrink={false}
+      htmlFor=":r0:"
+      id=":r0:-label"
+    >
+      comment
+    </label>
+    <div
+      className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+      onClick={[Function]}
+    >
+      <input
+        aria-invalid={false}
+        autoFocus={false}
+        className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+        disabled={false}
+        id=":r0:"
+        name="comment"
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="text"
+        value=""
+      />
+      <fieldset
+        aria-hidden={true}
+        className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend
+          className="css-yjsfm1"
+        >
+          <span>
+            comment
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+  <span
+    aria-label={null}
+    className="MuiRating-root MuiRating-sizeMedium css-1qqgbpl-MuiRating-root"
+    onMouseLeave={[Function]}
+    onMouseMove={[Function]}
+    role={null}
+  >
+    <label
+      className="css-dqr9h-MuiRating-label"
+      htmlFor=":r2:"
+    >
+      <span
+        className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="StarBorderIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiRating-visuallyHidden"
+      >
+        1 Star
+      </span>
+    </label>
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      disabled={false}
+      id=":r2:"
+      name="rating"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value={1}
+    />
+    <label
+      className="css-dqr9h-MuiRating-label"
+      htmlFor=":r3:"
+    >
+      <span
+        className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="StarBorderIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiRating-visuallyHidden"
+      >
+        2 Stars
+      </span>
+    </label>
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      disabled={false}
+      id=":r3:"
+      name="rating"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value={2}
+    />
+    <label
+      className="css-dqr9h-MuiRating-label"
+      htmlFor=":r4:"
+    >
+      <span
+        className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="StarBorderIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiRating-visuallyHidden"
+      >
+        3 Stars
+      </span>
+    </label>
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      disabled={false}
+      id=":r4:"
+      name="rating"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value={3}
+    />
+    <label
+      className="css-dqr9h-MuiRating-label"
+      htmlFor=":r5:"
+    >
+      <span
+        className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="StarBorderIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiRating-visuallyHidden"
+      >
+        4 Stars
+      </span>
+    </label>
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      disabled={false}
+      id=":r5:"
+      name="rating"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value={4}
+    />
+    <label
+      className="css-dqr9h-MuiRating-label"
+      htmlFor=":r6:"
+    >
+      <span
+        className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="StarBorderIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiRating-visuallyHidden"
+      >
+        5 Stars
+      </span>
+    </label>
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      disabled={false}
+      id=":r6:"
+      name="rating"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value={5}
+    />
+    <label
+      className="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+    >
+      <input
+        checked={false}
+        className="MuiRating-visuallyHidden"
+        id="rating-empty"
+        name="rating"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="radio"
+        value=""
+      />
+      <span
+        className="MuiRating-visuallyHidden"
+      >
+        Empty
+      </span>
+    </label>
+  </span>
+  <span />
+  <button
+    className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-xsqe0f-MuiButtonBase-root-MuiButton-root"
+    disabled={false}
+    onBlur={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

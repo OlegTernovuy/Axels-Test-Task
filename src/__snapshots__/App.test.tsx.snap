@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshotcomponent Matches Snapshot 1`] = `
+<div
+  className="sc-jlZhRR dwJfrq"
+>
+  <header
+    className="sc-eqUzNf llCMqC"
+  >
+    <h1>
+      Axels Test Task
+    </h1>
+    <span>
+      Oleh Ternovyi
+    </span>
+  </header>
+  <div>
+    This page does not exist
+  </div>
+  <footer
+    className="sc-fqkwJk eedRsB"
+  >
+    <span>
+      Oleh Ternovyi 2024
+    </span>
+  </footer>
+</div>
+`;

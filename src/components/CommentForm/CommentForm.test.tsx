@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import CommentForm from './CommentForm';
 
-describe('Comment form snapshot component', () => {
+describe('CommentForm component', () => {
     test('renders CommentForm correctly', () => {
         render(<CommentForm />);
         expect(screen.getByLabelText(/comment/i)).toBeInTheDocument();
@@ -62,7 +62,7 @@ describe('Comment form snapshot component', () => {
         ).toBeInTheDocument();
     });
 
-    it('Matches Snapshot', () => {
+    it('CommentForm matches Snapshot', () => {
         const commentFormComponent = renderer.create(<CommentForm />).toJSON();
         expect(commentFormComponent).toMatchSnapshot();
     });

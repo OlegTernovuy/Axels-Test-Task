@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 
 import ProductsPage from './ProductsPage';
-import { render, screen } from '@testing-library/react';
 import { fetchProducts } from '../../redux/ducks/products';
 
 const mockUseDispatch = jest.fn();

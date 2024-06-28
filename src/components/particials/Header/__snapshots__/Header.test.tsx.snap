@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Header snapshot component Header matches Snapshot 1`] = `
+<header
+  className="sc-aYaIB igTKbP"
+>
+  <h1>
+    Axels Test Task
+  </h1>
+  <span>
+    Oleh Ternovyi
+  </span>
+</header>
+`;
+
 exports[`Header snapshot component Matches Snapshot 1`] = `
 <header
   className="sc-aYaIB igTKbP"

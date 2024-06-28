@@ -22,8 +22,6 @@ const ProductModal = () => {
     const { id } = useParams();
 
     const [open, setOpen] = useState(true);
-    const singleProduct = useAppSelector(Selectors.product);
-    const loading = useAppSelector(Selectors.singleProdLoading);
 
     useEffect(() => {
       if (id)
@@ -35,6 +33,9 @@ const ProductModal = () => {
         navigate('/');
     };
 
+    const singleProduct = useAppSelector(Selectors.product);
+    const loading = useAppSelector(Selectors.singleProdLoading);
+    
     return (
       <div>
         <Modal open={open} onClose={closeModal}>

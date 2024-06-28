@@ -46,16 +46,18 @@ export const fetchProducts = createAction('products/getProductsAction');
 export const fetchSingleProduct = createAction('products/getSingleProductAction');
 
 // Worker
-function* getProductsSaga(): SagaIterator {
+export function* getProductsSaga(): SagaIterator {
   try {
     const products: IProducts = yield call(() => getRequest<IProducts>('/prod'));    
     yield put(getProductSuccessAction(products));
   } catch (error) {    
     yield put(getProductErrorAction(error.toString()));
+    console.log(error);
+    
   }
 }
 
-function* getSingleProductSaga(id): SagaIterator {
+export function* getSingleProductSaga(id): SagaIterator {
   try {
     const product: ISingleProduct = yield call(() => getRequest<ISingleProduct>(`/prod/${1}`));
     yield put(getSingleProductSuccessAction(product));
