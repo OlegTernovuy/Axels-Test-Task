@@ -5,6 +5,7 @@ import productsReducer, {
     getSingleProductSuccessAction,
     getProductErrorAction,
 } from './products';
+
 import { IProductsState, IProducts, ISingleProduct } from '../../types';
 import { mockedProduct, mockedProducts } from '../../mock';
 
@@ -30,7 +31,7 @@ describe('Products reducer', () => {
     });
 
     it('should handle getProductSuccessAction', () => {
-        const products: IProducts = [mockedProducts];
+        const products: IProducts = mockedProducts;
         const state = productsReducer(
             initialState,
             getProductSuccessAction(products)

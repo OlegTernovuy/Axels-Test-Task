@@ -7,6 +7,7 @@ import {
     getSingleProductSaga,
     getSingleProductSuccessAction,
 } from './products';
+
 import { getRequest } from '../../api';
 import { mockedProduct, mockedProducts } from '../../mock';
 import { IProducts, ISingleProduct } from '../../types';
@@ -18,7 +19,7 @@ jest.mock('../../api', () => ({
 describe('Products saga', () => {
     it('should handle getProductsSaga()', async () => {
         const dispatched: any[] = [];
-        const products: IProducts = [mockedProducts];
+        const products: IProducts = mockedProducts;
 
         (getRequest as jest.Mock).mockResolvedValue(products);
 

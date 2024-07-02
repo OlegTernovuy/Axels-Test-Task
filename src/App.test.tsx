@@ -1,10 +1,10 @@
-import renderer from 'react-test-renderer';
-
 import App from './App';
 
-describe('App snapshotcomponent', () => {
-    it('Matches Snapshot', () => {
-        const ProductsPageComponent = renderer.create(<App />).toJSON();
-        expect(ProductsPageComponent).toMatchSnapshot();
+import { renderWithProviders } from './utils/utils-test';
+
+describe('App component', () => {
+    it('App matches Snapshot', () => {
+        const view = renderWithProviders(<App/>)
+        expect(view).toMatchSnapshot();
     });
 });

@@ -17,6 +17,8 @@ import { fetchSingleProduct } from '../../redux/ducks/products';
 import Selectors from '../../redux/ducks/selectors';
 
 const ProductModal = () => {
+    const loading = useAppSelector(Selectors.singleProdLoading);
+    const singleProduct = useAppSelector(Selectors.product);
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const { id } = useParams();
@@ -32,9 +34,6 @@ const ProductModal = () => {
         setOpen(false);
         navigate('/');
     };
-
-    const singleProduct = useAppSelector(Selectors.product);
-    const loading = useAppSelector(Selectors.singleProdLoading);
     
     return (
       <div>

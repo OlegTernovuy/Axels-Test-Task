@@ -1,10 +1,10 @@
-import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 
 import CommentsList from './CommentsList';
+
 import { mockedComments } from '../../mock';
 
-describe('CommentList snapshot component', () => {
+describe('CommentList component', () => {
     test('renders correct number of comments', () => {
         render(<CommentsList comments={mockedComments} />);
         const commentsBlock = screen.getAllByRole('img');
@@ -12,9 +12,7 @@ describe('CommentList snapshot component', () => {
     });
 
     it('CommentList matches Snapshot', () => {
-        const commentListComponent = renderer
-            .create(<CommentsList comments={mockedComments} />)
-            .toJSON();
-        expect(commentListComponent).toMatchSnapshot();
+        const view = render(<CommentsList comments={mockedComments} />);
+        expect(view).toMatchSnapshot();
     });
 });

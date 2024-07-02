@@ -1,13 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import ProductModal from './ProductModal';
-import { fetchSingleProduct } from '../../redux/ducks/products';
+
+import { renderWithProviders } from '../../utils/utils-test';
+import { mockedProduct } from '../../mock';
 
 const mockUseParams = jest.fn();
 const mockedUsedNavigate = jest.fn();
-const mockUseDispatch = jest.fn();
-const mockUseSelector = jest.fn();
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
@@ -15,37 +15,41 @@ jest.mock('react-router-dom', () => ({
     useNavigate: () => mockedUsedNavigate,
 }));
 
-jest.mock('react-redux', () => ({
-    ...jest.requireActual('react-redux'),
-    useDispatch: () => mockUseDispatch,
-    useSelector: () => mockUseSelector,
-}));
-
-jest.mock('../../redux/ducks/products', () => ({
-    fetchSingleProduct: jest.fn(),
-}));
-
-describe('Product modal component', () => {
+describe('ProductModal component', () => {
     beforeEach(() => {
-        mockUseParams.mockReturnValue({ id: '1' });
+        mockUseParams.mockReturnValue({ prodId: '1' });
     });
 
     afterEach(() => {
         jest.clearAllMocks();
     });
 
-    it('Matches Snapshot', () => {
-        const { asFragment } = render(<ProductModal />);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
-    test('Dispatches fetchSingleProduct on mount', () => {
-        render(<ProductModal />);
-        expect(mockUseDispatch).toHaveBeenCalledWith(fetchSingleProduct());
-    });
-
-    it('renders loading state correctly', () => {
-        render(<ProductModal />);
+    test('Render product modal loading state correctly', () => {
+        renderWithProviders(<ProductModal />, {
+            preloadedState: {
+                productsStore: {
+                    product: mockedProduct,
+                    singleProdLoading: true,
+                },
+            },
+        });
         expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
+    });
+
+    test('Render product modal with data correctly', () => {
+        renderWithProviders(<ProductModal />, {
+            preloadedState: {
+                productsStore: {
+                    product: mockedProduct,
+                    singleProdLoading: false,
+                },
+            },
+        });
+        expect(screen.getByText(mockedProduct.title)).toBeInTheDocument();
+    });
+
+    test('ProductModal matches Snapshot', () => {
+        const view = renderWithProviders(<ProductModal />);
+        expect(view).toMatchSnapshot();
     });
 });

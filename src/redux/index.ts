@@ -6,19 +6,31 @@ import products, { watchGetProducts, watchGetSingleProduct } from './ducks/produ
 
 const sagaMiddleware = createSagaMiddleware();
 
-const rootReducer = combineReducers({ productsStore: products });
+export const rootReducer = combineReducers({ productsStore: products });
 
 const rootSaga = function* () {
   yield all([watchGetProducts(), watchGetSingleProduct()]);
 };
 
-const store = configureStore({
+// const store = configureStore({
+//   reducer: rootReducer,
+//   middleware: () => new Tuple(sagaMiddleware),
+// });
+
+const preloadedState = {};
+export const store = configureStore({
   reducer: rootReducer,
   middleware: () => new Tuple(sagaMiddleware),
+
+  preloadedState
 });
 
 sagaMiddleware.run(rootSaga);
 
 export type RootState = ReturnType<typeof rootReducer>
 export type AppDispatch = typeof store.dispatch;
-export default store;
+// export default store;
+
+// export type RootState = ReturnType<typeof rootReducer>
+// export type AppStore = ReturnType<typeof setupStore>
+// export type AppDispatch = AppStore['dispatch']

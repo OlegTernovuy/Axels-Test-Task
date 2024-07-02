@@ -10,8 +10,8 @@ import { fetchProducts } from '../../redux/ducks/products';
 import Selectors from '../../redux/ducks/selectors';
 
 const ProductsPage = () => {
-  const productsList = useAppSelector(Selectors.products);  
   const loading = useAppSelector(Selectors.prodLoading);
+  const productsList = useAppSelector(Selectors.products);  
   const errors = useAppSelector(Selectors.errors);
   const dispatch = useAppDispatch();  
 

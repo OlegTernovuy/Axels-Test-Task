@@ -1,4 +1,3 @@
-import renderer from 'react-test-renderer';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import CommentForm from './CommentForm';
@@ -63,7 +62,7 @@ describe('CommentForm component', () => {
     });
 
     it('CommentForm matches Snapshot', () => {
-        const commentFormComponent = renderer.create(<CommentForm />).toJSON();
-        expect(commentFormComponent).toMatchSnapshot();
+        const view = render(<CommentForm />);
+        expect(view).toMatchSnapshot();
     });
 });

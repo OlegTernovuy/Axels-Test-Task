@@ -50,7 +50,7 @@ export function* getProductsSaga(): SagaIterator {
   try {
     const products: IProducts = yield call(() => getRequest<IProducts>('/prod'));    
     yield put(getProductSuccessAction(products));
-  } catch (error) {    
+  } catch (error) {
     yield put(getProductErrorAction(error.toString()));
     console.log(error);
     

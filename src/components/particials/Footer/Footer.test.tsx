@@ -1,9 +1,10 @@
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
+
 import Footer from './Footer';
 
-describe('Footer snapshot component', () => {
+describe('Footer component', () => {
     it('Footer matches Snapshot', () => {
-        const footerComponent = renderer.create(<Footer />).toJSON();
-        expect(footerComponent).toMatchSnapshot();
+        const view = render(<Footer />);
+        expect(view).toMatchSnapshot();
     });
 });
