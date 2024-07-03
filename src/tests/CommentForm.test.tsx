@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom'
 
-import { CommentForm } from '../../components';
+import { CommentForm } from '../components';
 
 describe('CommentForm component', () => {
     it('should render CommentForm submit button correctly', () => {
@@ -15,7 +15,7 @@ describe('CommentForm component', () => {
         render(<CommentForm />);
         fireEvent.click(screen.getByRole('button', { name: /submit/i }));
         expect(
-            await screen.findByText(/comment is required/i)
+            await screen.findByText(/Comment is required/i)
         ).toBeInTheDocument();
     });
 

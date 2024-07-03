@@ -8,9 +8,9 @@ import {
     getSingleProductSuccessAction,
 } from '../redux/ducks/products';
 
-import { getRequest } from '../api';
 import { mockedProduct, mockedProducts } from '../mock';
 import { IProducts, ISingleProduct } from '../types';
+import { getRequest } from '../api';
 
 jest.mock('../api', () => ({
     getRequest: jest.fn(),

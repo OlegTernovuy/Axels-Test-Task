@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { ProductCard } from '../../components';
+import { ProductCard } from '../components';
 
-import { mockedProduct } from '../../mock';
+import { mockedProduct } from '../mock';
 
 const mockedUsedNavigate = jest.fn();
 

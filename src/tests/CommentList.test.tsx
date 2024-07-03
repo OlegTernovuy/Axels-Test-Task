@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
-import { CommentsList } from '../../components';
+import { CommentsList } from '../components';
 
-import { mockedComments } from '../../mock';
+import { mockedComments } from '../mock';
 
 describe('CommentList component', () => {
     it('should render correct number of comments', () => {

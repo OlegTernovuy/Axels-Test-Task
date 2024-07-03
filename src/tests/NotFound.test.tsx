@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import { Header } from '../../components';
+import NotFound from '../pages/NotFound';
 
-describe('Header component', () => {
+describe('NotFoundPage component', () => {
     it('should match a snapshot', () => {
-        const view = render(<Header />);
+        const view = render(<NotFound />);
         expect(view).toMatchSnapshot();
     });
 });

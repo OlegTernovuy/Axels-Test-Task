@@ -1,9 +1,9 @@
-import App from '../../App';
+import App from '../App';
 
-import { renderWithProviders } from '../../utils/utils-test';
+import { renderWithProviders } from './utils/utils-test';
 
 describe('App component', () => {
-    it('App matches Snapshot', () => {
+    it('should match a snapshot', () => {
         const view = renderWithProviders(<App />);
         expect(view).toMatchSnapshot();
     });

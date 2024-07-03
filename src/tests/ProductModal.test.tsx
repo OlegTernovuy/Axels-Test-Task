@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom'
 
-import { ProductModal } from '../../components';
+import { ProductModal } from '../components';
 
-import { renderWithProviders } from '../../utils/utils-test';
-import { mockedProduct } from '../../mock';
+import { renderWithProviders } from './utils/utils-test';
+import { mockedProduct } from '../mock';
 
 const mockUseParams = jest.fn();
 const mockedUsedNavigate = jest.fn();
