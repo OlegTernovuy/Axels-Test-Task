@@ -45,7 +45,6 @@ export const fetchProducts = createAction('products/getProductsAction');
 
 export const fetchSingleProduct = createAction('products/getSingleProductAction');
 
-// Worker
 export function* getProductsSaga(): SagaIterator {
   try {
     const products: IProducts = yield call(() => getRequest<IProducts>('/prod'));    
@@ -66,7 +65,6 @@ export function* getSingleProductSaga(id): SagaIterator {
   }
 }
 
-// Watcher
 export function* watchGetProducts(): SagaIterator {
   yield takeEvery(fetchProducts, getProductsSaga);
 }
