@@ -1,37 +1,39 @@
-import { createSlice, createAction } from '@reduxjs/toolkit';
+import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
 import { put, call, takeEvery } from '@redux-saga/core/effects';
+import { type SagaIterator } from '@redux-saga/core';
 
 import { getRequest } from '../../api';
+import { IProducts, IProductsState, ISingleProduct } from '../../types';
 
-const usersInitialState = {
+const usersInitialState: IProductsState = {
   products: [],
-  product: {},
+  product: {} as ISingleProduct,
   prodLoading: false,
   singleProdLoading: false,
   errors: '',
 };
 
-export const productsSlice = createSlice({
+export const products = createSlice({
   name: 'products',
   initialState: usersInitialState,
   reducers: {
-    getProductsAction: (state, action) => {
+    getProductsAction: (state) => {
       state.errors = '';
       state.prodLoading = true;
     },
-    getSingleProductAction: (state, action) => {
+    getSingleProductAction: (state) => {
       state.errors = '';
       state.singleProdLoading = true;
     },
-    getProductSuccessAction: (state, action) => {
+    getProductSuccessAction: (state, action: PayloadAction<IProducts>) => {
       state.products = action.payload;
       state.prodLoading = false;
     },
-    getSingleProductSuccessAction: (state, action) => {
+    getSingleProductSuccessAction: (state, action: PayloadAction<ISingleProduct>) => {
       state.product = action.payload;
       state.singleProdLoading = false;
     },
-    getProductErrorAction: (state, action) => {
+    getProductErrorAction: (state, action: PayloadAction<string>) => {
       state.prodLoading = false;
       state.singleProdLoading = false;
       state.errors = action.payload;
@@ -43,31 +45,31 @@ export const fetchProducts = createAction('products/getProductsAction');
 
 export const fetchSingleProduct = createAction('products/getSingleProductAction');
 
-// Worker
-function* getProductsSaga() {
+export function* getProductsSaga(): SagaIterator {
   try {
-    const products = yield call(() => getRequest('/prod'));
+    const products: IProducts = yield call(() => getRequest<IProducts>('/prod'));    
     yield put(getProductSuccessAction(products));
   } catch (error) {
-    yield put(getProductErrorAction(error.message))
+    yield put(getProductErrorAction(error.toString()));
+    console.log(error);
+    
   }
 }
 
-function* getSingleProductSaga(id) {
+export function* getSingleProductSaga(id): SagaIterator {
   try {
-    const product = yield call(() => getRequest(`/prod/${1}`));
+    const product: ISingleProduct = yield call(() => getRequest<ISingleProduct>(`/prod/${1}`));
     yield put(getSingleProductSuccessAction(product));
   } catch (error) {
-    yield put(getProductErrorAction(error.message))
+    yield put(getProductErrorAction(error.toString()))
   }
 }
 
-// Watcher
-export function* watchGetProducts() {
+export function* watchGetProducts(): SagaIterator {
   yield takeEvery(fetchProducts, getProductsSaga);
 }
 
-export function* watchGetSingleProduct() {
+export function* watchGetSingleProduct(): SagaIterator {
   yield takeEvery(fetchSingleProduct, getSingleProductSaga);
 }
 
@@ -77,5 +79,5 @@ export const {
   getProductSuccessAction,
   getSingleProductSuccessAction,
   getProductErrorAction,
-} = productsSlice.actions;
-export default productsSlice.reducer;
+} = products.actions;
+export default products.reducer;
