@@ -30,7 +30,7 @@ import {
 } from '@devexpress/dx-react-grid';
 import { Paper } from '@mui/material';
 
-import { StyledWrapperDiv } from '../styled/StyledReactGrid';
+import { StyledDiv } from '../styled/StyledProductsPage';
 
 import { products } from '../testing-data/productsData';
 
@@ -111,7 +111,7 @@ const LearnReactGrid = () => {
     };
 
     return (
-        <StyledWrapperDiv>
+        <StyledDiv>
             <Paper>
                 <Grid rows={rows} columns={COLUMNS} getRowId={getRowId}>
                     <DragDropProvider />
@@ -170,7 +170,7 @@ const LearnReactGrid = () => {
                     <PagingPanel pageSizes={PAGE_SIZES} />
                 </Grid>
             </Paper>
-        </StyledWrapperDiv>
+        </StyledDiv>
     );
 };
 
