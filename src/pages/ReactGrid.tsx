@@ -32,16 +32,16 @@ import { Paper } from '@mui/material';
 
 import { StyledDiv } from '../styled/StyledProductsPage';
 
-import { products } from '../testing-data/productsData';
+import { PRODUCTS } from '../testing-data/productsData';
 
-const LearnReactGrid = () => {
+const ReactGrid = () => {
     const COLUMNS = [
         { name: 'id', title: 'ID' },
         { name: 'title', title: 'Title' },
         { name: 'img', title: 'Image' },
         { name: 'desc', title: 'Desc' },
     ];
-    const [rows, setRows] = useState(products);
+    const [rows, setRows] = useState(PRODUCTS);
     const getRowId = (row) => row.id;
 
     const [hiddenColumnNames, setHiddenColumnNames] = useState([]);
@@ -174,4 +174,4 @@ const LearnReactGrid = () => {
     );
 };
 
-export default LearnReactGrid;
+export default ReactGrid;

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import ProductsPage from '../pages/ProductsPage';
+import { ProductsPage } from '../pages';
 
 import { renderWithProviders } from './utils/utils-test';
 

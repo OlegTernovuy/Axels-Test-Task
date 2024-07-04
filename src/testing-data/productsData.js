@@ -1,4 +1,4 @@
-export const products = [
+export const PRODUCTS = [
         {
                 id: 1,
                 title: 'Prod 1',
@@ -43,7 +43,7 @@ export const products = [
         },
 ]
 
-export const chartData = [
+export const CHART_DATA = [
         { month: 'Jan', learned: 50, total: 987 },
         { month: 'Feb', learned: 100, total: 3000 },
         { month: 'March', learned: 30, total: 1100 },
@@ -52,7 +52,7 @@ export const chartData = [
         { month: 'June', learned: 150, total: 7500 },
 ];
 
-export const pieChartData = [
+export const PIE_CHART_DATA = [
         { possition: 'Developer', salary: 20 },
         { possition: 'Qa', salary: 10 },
         { possition: 'Pm', salary: 10 },
@@ -96,3 +96,32 @@ export const dataGenerator = (pointCount) => {
         }
         return data;
 };
+
+export const SCHEDULER_DATA = [
+        {
+                startDate: '2024-07-04T11:45',
+                endDate: '2024-07-04T12:00',
+                title: 'Meeting',
+                id: 1,
+        },
+        {
+                startDate: '2024-07-04T17:30',
+                endDate: '2024-07-04T17:45',
+                title: 'Meeting',
+                id: 2,
+        },
+        {
+                startDate: '2024-07-04',
+                endDate: '2024-07-05',
+                title: 'Education task 3',
+                allDay: true,
+                id: 3,
+        },
+        {
+                startDate: '2024-07-05',
+                endDate: '2024-07-06',
+                title: 'Education task 4',
+                allDay: true,
+                id: 3,
+        },
+];

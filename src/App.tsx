@@ -1,11 +1,14 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import ProductsPage from './pages/ProductsPage';
-import NotFound from './pages/NotFound';
+import {
+    NotFound,
+    ProductsPage,
+    ReactChart,
+    ReactGrid,
+    ReactScheduler,
+} from './pages';
 import { Footer, Header, ProductModal } from './components';
 import { AppDiv } from './styled/StyledApp';
-import LearnReactGrid from './pages/LearnReactGrid';
-import ReactChart from './pages/ReactChart';
 
 const routes = createBrowserRouter([
     {
@@ -21,12 +24,17 @@ const routes = createBrowserRouter([
     },
     {
         path: '/learnGrid',
-        element: <LearnReactGrid />,
+        element: <ReactGrid />,
         errorElement: <NotFound />,
     },
     {
         path: '/learnChart',
         element: <ReactChart />,
+        errorElement: <NotFound />,
+    },
+    {
+        path: '/learnScheduler',
+        element: <ReactScheduler />,
         errorElement: <NotFound />,
     },
 ]);

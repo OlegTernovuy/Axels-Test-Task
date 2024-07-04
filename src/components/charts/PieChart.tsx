@@ -2,16 +2,14 @@ import { Chart, PieSeries } from '@devexpress/dx-react-chart-material-ui';
 
 import { StyledChartPaper } from '../../styled/StyledChartPage';
 
-import { pieChartData } from '../../testing-data/productsData';
+import { PIE_CHART_DATA } from '../../testing-data/productsData';
 
-const PieChart = () => {
-    return (
-        <StyledChartPaper>
-            <Chart data={pieChartData}>
-                <PieSeries valueField="salary" argumentField="possition" />
-            </Chart>
-        </StyledChartPaper>
-    );
-};
+const PieChart = () => (
+    <StyledChartPaper>
+        <Chart data={PIE_CHART_DATA}>
+            <PieSeries valueField="salary" argumentField="possition" />
+        </Chart>
+    </StyledChartPaper>
+);
 
 export default PieChart;
