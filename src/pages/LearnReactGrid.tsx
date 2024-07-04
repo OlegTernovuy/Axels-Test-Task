@@ -32,62 +32,57 @@ import { Paper } from '@mui/material';
 
 import { StyledWrapperDiv } from '../styled/StyledReactGrid';
 
-import { generateRows, globalSalesValues } from '../testing-data/generator';
+import { products } from '../testing-data/productsData';
 
 const LearnReactGrid = () => {
-    const columns = [
-        { name: 'region', title: 'Region' },
-        { name: 'sector', title: 'Sector' },
-        { name: 'customer', title: 'Customer' },
-        { name: 'product', title: 'Product' },
-        { name: 'amount', title: 'Sale Amount' },
+    const COLUMNS = [
+        { name: 'id', title: 'ID' },
+        { name: 'title', title: 'Title' },
+        { name: 'img', title: 'Image' },
+        { name: 'desc', title: 'Desc' },
     ];
-    const rows = generateRows({ columnValues: globalSalesValues, length: 8 });
+    const [rows, setRows] = useState(products);
+    const getRowId = (row) => row.id;
 
     const [hiddenColumnNames, setHiddenColumnNames] = useState([]);
 
     const [sorting, setSorting] = useState<Sorting[]>([
-        { columnName: 'region', direction: 'asc' },
+        { columnName: 'id', direction: 'asc' },
     ]);
 
     const [filters, setFilters] = useState<Filter[]>([
-        { columnName: 'region', value: '' },
+        { columnName: 'title', value: '' },
     ]);
     const filteringStateColumnExtensions = [
-        { columnName: 'region', filteringEnabled: false },
-        { columnName: 'sector', filteringEnabled: false },
+        { columnName: 'id', filteringEnabled: false },
+        { columnName: 'img', filteringEnabled: false },
     ];
 
     const [search, setSearch] = useState('');
 
     const [columnOrder, setColumnOrder] = useState([
-        'region',
-        'sector',
-        'customer',
-        'product',
-        'amount',
+        'id',
+        'title',
+        'img',
+        'desc',
     ]);
     const [columnWidths, setColumnWidths] = useState<TableColumnWidthInfo[]>([
-        { columnName: 'region', width: 180 },
-        { columnName: 'sector', width: 180 },
-        { columnName: 'customer', width: 180 },
-        { columnName: 'product', width: 240 },
-        { columnName: 'amount', width: 240 },
+        { columnName: 'id', width: 80 },
+        { columnName: 'title', width: 160 },
+        { columnName: 'img', width: 380 },
+        { columnName: 'desc', width: 240 },
     ]);
 
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(5);
-    const pageSizes: number[] = [5, 10, 15];
+    const PAGE_SIZES: number[] = [5, 10, 15];
 
     const [editingRowIds, setEditingRowIds] = useState([]);
     const [addedRows, setAddedRows] = useState([]);
     const [rowChanges, setRowChanges] = useState({});
 
     const changeAddedRows = (value) => {
-        const initialized = value.map((row) =>
-            Object.keys(row).length ? row : { city: 'Tokio' }
-        );
-        setAddedRows(initialized);
+        setAddedRows(value);
     };
 
     const commitChanges = ({ added, changed, deleted }) => {
@@ -112,13 +107,13 @@ const LearnReactGrid = () => {
             const deletedSet = new Set(deleted);
             changedRows = rows.filter((row) => !deletedSet.has(row.id));
         }
-        //     setRows(changedRows);
+        setRows(changedRows);
     };
 
     return (
         <StyledWrapperDiv>
             <Paper>
-                <Grid rows={rows} columns={columns}>
+                <Grid rows={rows} columns={COLUMNS} getRowId={getRowId}>
                     <DragDropProvider />
                     <SearchState value={search} onValueChange={setSearch} />
                     <SortingState
@@ -172,7 +167,7 @@ const LearnReactGrid = () => {
                         showEditCommand
                         showDeleteCommand
                     />
-                    <PagingPanel pageSizes={pageSizes} />
+                    <PagingPanel pageSizes={PAGE_SIZES} />
                 </Grid>
             </Paper>
         </StyledWrapperDiv>
