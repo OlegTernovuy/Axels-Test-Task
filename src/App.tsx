@@ -4,6 +4,7 @@ import ProductsPage from './pages/ProductsPage';
 import NotFound from './pages/NotFound';
 import { Footer, Header, ProductModal } from './components';
 import { AppDiv } from './styled/StyledApp';
+import LearnReactGrid from './pages/LearnReactGrid';
 
 const routes = createBrowserRouter([
     {
@@ -16,6 +17,11 @@ const routes = createBrowserRouter([
                 element: <ProductModal />,
             },
         ],
+    },
+    {
+        path: '/learnGrid',
+        element: <LearnReactGrid />,
+        errorElement: <NotFound />,
     },
 ]);
 
