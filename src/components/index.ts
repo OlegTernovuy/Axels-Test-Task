@@ -4,3 +4,7 @@ export { default as CommentForm } from './CommentForm';
 export { default as CommentsList } from './CommentsList';
 export { default as ProductCard } from './ProductCard';
 export { default as ProductModal } from './ProductModal';
+export { default as BarChart } from './charts/BarChart';
+export { default as PieChart } from './charts/PieChart';
+export { default as ScatterChart } from './charts/ScatterChart';
+export { default as ZoomChart } from './charts/ZoomChart';
