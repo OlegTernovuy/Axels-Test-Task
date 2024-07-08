@@ -1,4 +1,5 @@
 import { BarChart, PieChart, ScatterChart, ZoomChart } from '../components';
+import HorizontalBarChart from '../components/charts/HorizontalBarChart';
 
 import { StyledChartWrapper } from '../styled/StyledChartPage';
 
@@ -12,6 +13,9 @@ const ReactChart = () => {
             <StyledChartWrapper>
                 <PieChart />
                 <ScatterChart />
+            </StyledChartWrapper>
+            <StyledChartWrapper>
+                <HorizontalBarChart/>
             </StyledChartWrapper>
         </>
     );
